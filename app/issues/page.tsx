@@ -4,7 +4,7 @@ import prisma from "@/prisma/client";
 import IssueStatusBadge from "../components/IssueStatusBadge";
 import IssueActions from "./IssueActions";
 import delay from "delay";
-import Link  from "../components/Link";
+import Link from "../components/Link";
 
 const issues = async () => {
   const issues = await prisma.issue.findMany();
@@ -44,5 +44,7 @@ const issues = async () => {
     </div>
   );
 };
+
+export const dynamic = "force-dynamic";
 
 export default issues;
