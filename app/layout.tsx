@@ -1,7 +1,7 @@
 import { inter } from "@/app/ui/fonts";
 import { NavBar } from "./NavBar";
 import "@radix-ui/themes/styles.css";
-import { Theme } from "@radix-ui/themes";
+import { Container, Theme } from "@radix-ui/themes";
 
 export default function RootLayout({
   children,
@@ -13,7 +13,11 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`}>
         <Theme>
           <NavBar />
-          <main className="p-5"> {children}</main>
+          <main className="p-5">
+            <Container>
+              {children}
+            </Container>
+          </main>
         </Theme>
       </body>
     </html>
