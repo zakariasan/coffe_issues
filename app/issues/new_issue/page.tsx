@@ -2,17 +2,22 @@
 import { TextField, TextArea, Button, Callout } from "@radix-ui/themes";
 import { InfoCircledIcon } from "@radix-ui/react-icons";
 import React, { useState } from "react";
-import SimpleMDE from "react-simplemde-editor";
 import "easymde/dist/easymde.min.css";
 import { useForm, Controller } from "react-hook-form";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { setErrorMap } from "zod";
+import dynamic from 'next/dynamic';
 
 interface IssueForm {
   title: string;
   description: string;
 }
+
+
+const SimpleMDE = dynamic(() => import('react-simplemde-editor'), {
+  ssr: false,
+});
 
 const NewIssue = () => {
   const router = useRouter();
