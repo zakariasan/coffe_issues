@@ -6,7 +6,7 @@ interface Props {
   href: string;
   children: string;
 }
-const GoLink = ({ href, children }: Props) => {
+const Link = ({ href, children }: Props) => {
   return (
     <NextLink href={href} passHref legacyBehavior>
       <RadixLink>{children}</RadixLink>
@@ -14,4 +14,4 @@ const GoLink = ({ href, children }: Props) => {
   );
 };
 
-export default GoLink;
+export default Link;
