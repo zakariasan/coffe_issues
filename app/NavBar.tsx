@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 import { PiCoffeeFill } from "react-icons/pi";
 import { usePathname } from "next/navigation";
-import { Box } from "@radix-ui/themes";
+import { Box, Container, Flex } from "@radix-ui/themes";
 import { useSession } from "next-auth/react";
 import { stat } from "fs";
 
@@ -23,6 +23,8 @@ export const NavBar = () => {
   const path = usePathname();
   return (
     <nav className="flex space-x-6 mb-5 border-b h-16 px-5 items-center ">
+      <Container>
+        <Flex justify="between">
       <Link href="/">
         <PiCoffeeFill />
       </Link>
@@ -45,6 +47,8 @@ export const NavBar = () => {
           <Link href="/api/auth/signin"> Login</Link>
         )}
       </Box>
+      </Flex>
+      </Container>
     </nav>
   );
 };
