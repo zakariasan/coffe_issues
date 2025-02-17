@@ -50,6 +50,9 @@ export const NavBar = () => {
             {status === "authenticated" && (
             <DropdownMenu.Root>
                 <DropdownMenu.Trigger>
+                  <Flex justify="start" gap="3" align="center">
+
+                  <Text size="2">Hello {session.user!.name!}</Text>
                   <Avatar
                     src={session.user!.image!}
                     fallback="?"
@@ -57,6 +60,8 @@ export const NavBar = () => {
                     radius="full"
                     className="cursor-pointer"
                   />
+
+                  </Flex>
                 </DropdownMenu.Trigger>
                 <DropdownMenu.Content>
                   <DropdownMenu.Label>
