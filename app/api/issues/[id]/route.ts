@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/prisma/client";
 import { IssueSchema } from "@/app/api/issues/route";
-import { describe } from "node:test";
 
 interface Props {
   params: { id: string };

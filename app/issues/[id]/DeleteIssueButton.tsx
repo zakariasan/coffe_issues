@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { TrashIcon } from "@radix-ui/react-icons";
 import { Box, AlertDialog, Button, Flex } from "@radix-ui/themes";
 import axios from "axios";

@@ -1,5 +1,5 @@
 "use client";
-import { TextField, TextArea, Button, Callout } from "@radix-ui/themes";
+import { TextField, Button, Callout } from "@radix-ui/themes";
 import { InfoCircledIcon } from "@radix-ui/react-icons";
 import React, { useState } from "react";
 import "easymde/dist/easymde.min.css";
