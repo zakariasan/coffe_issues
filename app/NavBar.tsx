@@ -3,6 +3,9 @@ import React from "react";
 import Link from "next/link";
 import { PiCoffeeFill } from "react-icons/pi";
 import { usePathname } from "next/navigation";
+import { Box } from "@radix-ui/themes";
+import { useSession } from "next-auth/react";
+import { stat } from "fs";
 
 export const NavBar = () => {
   const links = [
@@ -15,6 +18,7 @@ export const NavBar = () => {
       href: "/issues",
     },
   ];
+  const { status, data: session } = useSession();
 
   const path = usePathname();
   return (
@@ -32,6 +36,15 @@ export const NavBar = () => {
           </li>
         ))}
       </ul>
+
+      <Box>
+        {status === "authenticated" && (
+          <Link href="/api/auth/signout">Log Out</Link>
+        )}
+        {status === "unauthenticated" && (
+          <Link href="/api/auth/signin"> Login</Link>
+        )}
+      </Box>
     </nav>
   );
 };
