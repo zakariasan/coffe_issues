@@ -12,7 +12,6 @@ import {
   Text,
 } from "@radix-ui/themes";
 import { useSession } from "next-auth/react";
-import { stat } from "fs";
 
 export const NavBar = () => {
   const links = [
